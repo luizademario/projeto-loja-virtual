@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 import hero from './assets/hero.png'
 import Benefits from './components/Benefits'
@@ -8,17 +9,24 @@ import HeroSection from './components/HeroSection'
 import Products from './components/Products'
 
 const App = () => {
+
+  const [cart, setCart] = useState(0)
+
   return (
     <div className="app">
-      <Header />
-      <HeroSection 
-        titulo ="Ofertas imperdíveis para você"
-        subtitulo = "Até 30% de desconto em produtos selecionados. Aproveite!"
-        textoBotao = "Ver ofertas"
-        imagemHero = {hero}
+      <Header cart={cart} setCart={setCart} />
+
+      <HeroSection
+        titulo="Ofertas imperdíveis para você"
+        subtitulo="Até 30% de desconto em produtos selecionados"
+        textoBotao="Ver ofertas"
+        imagemHero={hero}
       />
+
       <Categories />
-      <Products />
+
+      <Products setCart={setCart} />
+
       <Benefits />
       <Footer />
     </div>

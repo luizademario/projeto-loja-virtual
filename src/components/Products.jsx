@@ -1,4 +1,9 @@
-const Products = () => {
+const Products = ({ setCart }) => {
+
+    const addToCart = () => {
+        setCart(prev => prev + 1)
+    }
+
     return (
         <section id="produtos" className="products">
             <h2>Produtos em destaque</h2>
@@ -10,7 +15,9 @@ const Products = () => {
                     <h3>Tênis Esportivo</h3>
                     <p className="product-rating">⭐⭐⭐⭐☆ (4.5)</p>
                     <p className="product-price">R$ 299,90</p>
-                    <button className="btn-secondary">Adicionar ao carrinho</button>
+                    <button className="btn-secondary" onClick={addToCart}>
+                        Adicionar ao carrinho
+                    </button>
                 </div>
 
                 <div className="product-card">
@@ -19,7 +26,9 @@ const Products = () => {
                     <h3>Fone de Ouvido Bluetooth</h3>
                     <p className="product-rating">⭐⭐⭐⭐⭐ (4.8)</p>
                     <p className="product-price">R$ 149,90</p>
-                    <button className="btn-secondary">Adicionar ao carrinho</button>
+                    <button className="btn-secondary" onClick={addToCart}>
+                        Adicionar ao carrinho
+                    </button>
                 </div>
 
                 <div className="product-card">
@@ -28,7 +37,9 @@ const Products = () => {
                     <h3>Mochila para Notebook</h3>
                     <p className="product-rating">⭐⭐⭐⭐☆ (4.2)</p>
                     <p className="product-price">R$ 189,90</p>
-                    <button className="btn-secondary">Adicionar ao carrinho</button>
+                    <button className="btn-secondary" onClick={addToCart}>
+                        Adicionar ao carrinho
+                    </button>
                 </div>
 
                 <div className="product-card">
@@ -37,7 +48,9 @@ const Products = () => {
                     <h3>Relógio Smartwatch</h3>
                     <p className="product-rating">⭐⭐⭐⭐⭐ (4.7)</p>
                     <p className="product-price">R$ 349,90</p>
-                    <button className="btn-secondary">Adicionar ao carrinho</button>
+                    <button className="btn-secondary" onClick={addToCart}>
+                        Adicionar ao carrinho
+                    </button>
                 </div>
             </div>
         </section>
